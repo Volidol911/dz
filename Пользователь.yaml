@@ -1,0 +1,25 @@
+- user:
+    is_admin: true
+    name: "Тест"
+    age: 23
+    position: "инженер"
+    skills:
+      - skill:
+          name: "писать"
+          level: 5
+          description: "Уметь писать"
+      - skill:
+          name: "Читать"
+          level: 5
+          description: "Уметь читать"
+    residence:
+      country: "Россия"
+      city: "Москва"
+      street: "Пушкина"
+      house_number: 1
+      apartment_number: 1
+    pets:
+      - pet:
+          name: "Рыжик"
+          breed: "Дворняга"
+          can_meow: true
