@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: short-conv-port
 spec:
-  spec: NodePort
+  type: NodePort
   ports:
     - port: 3000
       targetPort: 80
