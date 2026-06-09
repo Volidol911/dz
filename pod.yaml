@@ -6,8 +6,8 @@ metadata:
     components: frontend
 spec:
   containers:
-    - name: short-conv-app
-      image: antonlarichev/conv-app:latest
+    - name: conv-app
+      image: antonlarichev/conv-app
       ports:
         - containerPort: 80
       resources:
