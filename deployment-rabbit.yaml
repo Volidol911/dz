@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbit-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      components: rabbit
+  template:
+    metadata:
+      labels:
+        components: rabbit
+    spec:
+      containers:
+        - name: rabbit
+          image: rabbitmq:4.3.6-management
+          ports:
+            - containerPort: 15672
+          env:
+            - name: USERNAME
+              value: SEED
+            - name: USER_PASSWORD
+              value: SEED
+          resources:
+            limits:
+              memory: "500Mi"
+              cpu: "300m"
+          volumeMounts:
+           - name: rabbit-data
+             mountPath: /var/lib/rabbitmq
+             subPath: rabbit
+      volumes:
+        - name: rabbit-data
+          persistentVolumeClaim:
+            claimName: rabbit-pvc
