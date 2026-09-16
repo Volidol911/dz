@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
         - name: rabbit
-          image: rabbitmq:4.3.6-management
+          image: rabbitmq:3-management
           ports:
             - containerPort: 15672
           env:
-            - name: USERNAME
-              value: SEED
-            - name: USER_PASSWORD
-              value: SEED
+            - name: SEED_USERNAME
+              value: demo
+            - name: SEED_USER_PASSWORD
+              value: demo
           resources:
             limits:
               memory: "500Mi"
